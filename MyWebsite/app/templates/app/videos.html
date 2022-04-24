@@ -1,0 +1,20 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+<p style="font-size:25px; color:blue; display: flex; justify-content: center;">
+    Приготовление пышных оладий!
+</p>
+<div style="display: flex; justify-content: center;">
+<VIDEO src="/media/oladi.mp4" controls="controls" width="600" height="400" poster="/media/oladi.jpg"></VIDEO>
+</div>
+<br/>
+<p style="font-size:25px; color:blue; display: flex; justify-content: center;">
+    Приготовление спагетти карбонара!
+</p>
+<div style="display: flex; justify-content: center;">
+<VIDEO src="/media/carbonara.mp4" controls="controls" width="600" height="400" poster="/media/carbonara.jpg" ></VIDEO>
+</div>
+{% endblock %}

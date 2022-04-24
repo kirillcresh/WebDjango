@@ -1,0 +1,18 @@
+﻿{% extends "app/layout.html" %}
+{% load static %} 
+{% block content %} 
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+<address>
+    Мой телефон: +79602210209 <br/>
+    <abbr title="Вконтакте">Vk:</abbr>
+    <a href="https://vk.com/kikartashov">vk.com/kikartashov</a> <br/>
+    <strong>Моя почта:</strong> kartashov.kirill2012@yandex.ru <br/>
+    <a href="https://vk.me/moneysend/kikartashov">На вкусный чай!</a> </br>
+    <a href ="http://instagram.com/kartashov322" target="_blank"> <img src="{% static 'app/content/inst.png' %}" alt="Logo 2" style="width: 75px;"/></a>
+
+</address>
+
+{% endblock %}

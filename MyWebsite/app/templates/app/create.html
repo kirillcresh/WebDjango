@@ -1,0 +1,24 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+<h2>
+    Создание Блога
+</h2>
+<a class="btn btn-warning" href="{% url 'blogs' %}">Назад</a>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            Название<br/>
+            {{ form.title }}<br>
+            Краткое описание<br/>
+            {{ form.description }}<br>
+            Содержание<br/>
+            {{ form.content }}<br>
+            <div>
+                Изображение:{{ form.image }}<br>
+            </div><br>
+            <button class="btn btn-success" type="submit">Добавить блог</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
+{% endblock %}

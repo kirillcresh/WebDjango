@@ -1,0 +1,98 @@
+body {
+    padding-top: 3%;
+    padding-bottom: 20px;
+    background-blend-mode: screen;
+    background: linear-gradient(limegreen, transparent), linear-gradient(90deg, skyblue, transparent), linear-gradient(-90deg, coral, transparent);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.author {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 1px;
+    background: #39b54a;
+    color: #fff;
+    width: 100%;
+}
+
+.blockpost {
+    transition: all 400ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding: 5px;
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #ffffff,#cbf0ff,#93e3fd,#ffc5ab) no-repeat;
+}
+.content {
+    width: 95%;
+    padding: 5px;
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #b721ff, #2af598, #fec051, #fee140, #fa709a);
+}
+
+.blockpost:hover {
+        -webkit-transition: background 0.3s ease transition: all 250ms ease-in-out;
+        box-shadow: 0 0 40px #87CEFA inset, 0 0 0 0 black;
+        background: linear-gradient(to bottom right, #F7C316, #FF916C, #F882B0) no-repeat;
+    }
+
+figure img {
+    float: left;
+    margin: 0 2% 1% 2%;
+    width: 25%;
+}
+
+.block1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 1%;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} Папая</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body>
+    <div style="position:fixed; z-index:-1; height:1000px;"></div>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: aqua;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"> <img src="{% static 'app/content/logo.png' %}" alt="logo" style="width:150px;" /> <br/> </a> 
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Готовка</a></li>
+                    <li><a href="{% url 'shops' %}">Закупка</a></li>
+                    <li><a href="{% url 'review' %}">Отзывы</a></li>
+                    <li><a href="{% url 'about' %}">О сайте</a></li>
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
+                    <li><a href="{% url 'videos' %}">Видео</a></li>
+                    <li><a href="{% url 'blogs' %}">Рецепты</a></li>
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="author">
+        <p>&copy; {{ year }} - KirillCresh</p>
+    </div>
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

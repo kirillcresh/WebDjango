@@ -1,0 +1,57 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+<p style=" margin-top:2%;">
+</p>
+<a class="btn btn-warning" href="{% url 'blogs' %}">Назад</a>
+{% if user.is_superuser %}
+<a class="btn btn-warning" onclick="document.location='update'">Редактировать</a>
+{% endif %}
+<div class="content" style="font-size:17px;">
+    <p align="center">
+        <b>
+            Рецепт->{{ blog.title }}
+        </b>
+    </p>
+    <p style="margin-left:25px;">
+    Краткое описание:
+    </p>{{ blog.description }}
+    <br/>
+    <p style="margin-left:15px;">
+        Приготовление:
+    </p>
+    {{ blog.content }}
+    <br/>
+    <p style="display: flex; justify-content: right;">
+        Дата публикации:{{ blog.posted }} <br/>
+        Автор:{{ blog.author }}
+    </p>
+</div>
+<br/>
+{% if user.is_authenticated %}
+<form method="POST" >
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success" > Отправить комментарий </button>
+</form>
+<div class="put_com" style="display: flex; justify-content: space-between; width: 96%; margin-left: 2%; margin-bottom: 2%;">
+    <a style="font-size: 20px">Комменратии:</a>
+</div>
+{% else %}
+    <h3> Для добавления комментария, пожалуйста, авторизуйтесь. </h3>
+{% endif %}
+{% if comments %}
+{% for comment in comments %}
+{% if comment in blog.comment_set.all %}
+    <div class="block_com">
+        <a style="margin: 1% 2% 0 1%; color: aquamarine">{{ comment.author }}{{ comment.posted }}</a>
+        <a style="font-size: 16px; margin: 0 2% 1% 2%; color: aquamarine"><i>{{ comment.text|linebreaks }}</i></a>
+        <a></a>
+    </div>
+{% endif %}
+{% endfor %}
+{% else %}
+    <p style="margin-left: 2%;">Здесь пока нет комментариев.</p>
+{% endif %}
+
+{% endblock %}
